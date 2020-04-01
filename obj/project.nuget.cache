@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "QHK8P8x59iJekD4hz4BPCxvOyUt0Bm7uvcBNfgwI4HrjjL1+ikms/lUjSHfI5OBXpuoypbXg0xaik6YEE9xmdw==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\Gregor\\AVG\\SupplierService\\SupplierService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gregor\\.nuget\\packages\\grpc\\2.28.0-pre3\\grpc.2.28.0-pre3.nupkg.sha512",
+    "C:\\Users\\Gregor\\.nuget\\packages\\grpc.core\\2.28.0-pre3\\grpc.core.2.28.0-pre3.nupkg.sha512",
+    "C:\\Users\\Gregor\\.nuget\\packages\\grpc.core.api\\2.28.0-pre3\\grpc.core.api.2.28.0-pre3.nupkg.sha512",
+    "C:\\Users\\Gregor\\.nuget\\packages\\grpc.tools\\2.28.0-pre3\\grpc.tools.2.28.0-pre3.nupkg.sha512",
+    "C:\\Users\\Gregor\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

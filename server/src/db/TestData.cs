@@ -16,6 +16,7 @@ namespace Suppliers {
             Product p2 = new Product {
                 Id = "0000002",
                 Name = "Beta"
+
             };
             products.Add(p2);
             Product p3 = new Product {

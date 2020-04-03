@@ -1,0 +1,31 @@
+syntax = "proto3";
+service SupplierService {
+  rpc findAllPreferredSuppliers (FindAllPreferredSuppliersRequest) returns (FindAllPreferredSuppliersResponse);
+  rpc findPreferredSupplier (FindPreferredSupplierRequest) returns (FindPreferredSupplierResponse);
+  rpc setPreferredSupplierForProduct (SetPreferredSupplierForProductRequest) returns (SetPreferredSupplierForProductResponse);
+}
+message FindAllPreferredSuppliersRequest {}
+message FindAllPreferredSuppliersResponse {
+  repeated Supplier suppliers = 1;
+}
+message FindPreferredSupplierRequest {
+  Product product = 1;
+}
+message FindPreferredSupplierResponse {
+  Supplier supplier = 1;
+}
+message SetPreferredSupplierForProductRequest {
+    Supplier supplier = 1;
+    Product product = 2;
+}
+message SetPreferredSupplierForProductResponse {}
+message Supplier {
+  string id = 1;
+  string name = 2;
+  string phone = 3;
+}
+message Product {
+    string id = 1;
+    string name = 2;
+    string supplierFk = 3;
+}

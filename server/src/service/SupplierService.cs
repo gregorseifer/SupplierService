@@ -21,8 +21,10 @@ namespace Suppliers
                 .ToList();
             return supplierList.FindAll( supplier => supplierIds.Contains(supplier.Id) );
         }
-        public  Supplier findPreferredSupplier(Product product) 
-            => supplierList.Find( supplier => product.SupplierFk == supplier.Id );
+        public  Supplier findPreferredSupplier(Product product) {
+            var p_fk = productList.Find( (Product p) => product.Id == p.Id ).SupplierFk;
+            return supplierList.Find( supplier => p_fk == supplier.Id );
+        }
         public void setPreferredSupplierForProduct(Supplier supplier, Product product) {
             var pId = (product??throw new ArgumentNullException()).Id;
             var sId = (supplier??throw new ArgumentNullException()).Id;

@@ -9,7 +9,8 @@ namespace Suppliers {
             List<Product> products = new List<Product>();
             Product p1 = new Product {
                 Id = "0000001",
-                Name = "Alpha"
+                Name = "Alpha",
+                SupplierFk = "0000001"
             };
             products.Add(p1);
             Product p2 = new Product {

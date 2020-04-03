@@ -10,7 +10,6 @@ namespace Suppliers
         {
             try
             {    
-                TestData.insertTestData();
                 Server server = new Server
                 {
                     Services = { global::SupplierService.BindService(new SupplierImpl()) },

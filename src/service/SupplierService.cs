@@ -9,18 +9,15 @@ namespace Suppliers
     {
         public SupplierService() {
         }
-        public SupplierList findAllPreferredSuppliers()
+        public List<Supplier> findAllPreferredSuppliers()
         {
             //
         }
-        public Supplier findPreferredSupplier(Product p)
+        public  Supplier findPreferredSupplier(Product product)
         {
             //
         }
-        public Empty setPreferredSupplierForProduct(SetSupplierParams setSupplierParams) {
-            //
-        }
-        public List<Supplier> findAllSuppliers() {
+        public void setPreferredSupplierForProduct(Supplier supplier, Product product) {
             //
         }
     }

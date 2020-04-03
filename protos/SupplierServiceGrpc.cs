@@ -11,47 +11,33 @@ public static partial class SupplierService
 {
   static readonly string __ServiceName = "SupplierService";
 
-  static readonly grpc::Marshaller<global::Empty> __Marshaller_Empty = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Empty.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::SupplierList> __Marshaller_SupplierList = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::SupplierList.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::ProductList> __Marshaller_ProductList = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::ProductList.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::Product> __Marshaller_Product = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Product.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::Supplier> __Marshaller_Supplier = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::Supplier.Parser.ParseFrom);
-  static readonly grpc::Marshaller<global::SetSupplierParams> __Marshaller_SetSupplierParams = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::SetSupplierParams.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::FindAllPreferredSuppliersRequest> __Marshaller_FindAllPreferredSuppliersRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FindAllPreferredSuppliersRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::FindAllPreferredSuppliersResponse> __Marshaller_FindAllPreferredSuppliersResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FindAllPreferredSuppliersResponse.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::FindPreferredSupplierRequest> __Marshaller_FindPreferredSupplierRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FindPreferredSupplierRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::FindPreferredSupplierResponse> __Marshaller_FindPreferredSupplierResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::FindPreferredSupplierResponse.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::SetPreferredSupplierForProductRequest> __Marshaller_SetPreferredSupplierForProductRequest = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::SetPreferredSupplierForProductRequest.Parser.ParseFrom);
+  static readonly grpc::Marshaller<global::SetPreferredSupplierForProductResponse> __Marshaller_SetPreferredSupplierForProductResponse = grpc::Marshallers.Create((arg) => global::Google.Protobuf.MessageExtensions.ToByteArray(arg), global::SetPreferredSupplierForProductResponse.Parser.ParseFrom);
 
-  static readonly grpc::Method<global::Empty, global::SupplierList> __Method_findAllPreferredSuppliers = new grpc::Method<global::Empty, global::SupplierList>(
+  static readonly grpc::Method<global::FindAllPreferredSuppliersRequest, global::FindAllPreferredSuppliersResponse> __Method_findAllPreferredSuppliers = new grpc::Method<global::FindAllPreferredSuppliersRequest, global::FindAllPreferredSuppliersResponse>(
       grpc::MethodType.Unary,
       __ServiceName,
       "findAllPreferredSuppliers",
-      __Marshaller_Empty,
-      __Marshaller_SupplierList);
+      __Marshaller_FindAllPreferredSuppliersRequest,
+      __Marshaller_FindAllPreferredSuppliersResponse);
 
-  static readonly grpc::Method<global::Empty, global::SupplierList> __Method_findAllSuppliers = new grpc::Method<global::Empty, global::SupplierList>(
-      grpc::MethodType.Unary,
-      __ServiceName,
-      "findAllSuppliers",
-      __Marshaller_Empty,
-      __Marshaller_SupplierList);
-
-  static readonly grpc::Method<global::Empty, global::ProductList> __Method_findAllProducts = new grpc::Method<global::Empty, global::ProductList>(
-      grpc::MethodType.Unary,
-      __ServiceName,
-      "findAllProducts",
-      __Marshaller_Empty,
-      __Marshaller_ProductList);
-
-  static readonly grpc::Method<global::Product, global::Supplier> __Method_findPreferredSupplier = new grpc::Method<global::Product, global::Supplier>(
+  static readonly grpc::Method<global::FindPreferredSupplierRequest, global::FindPreferredSupplierResponse> __Method_findPreferredSupplier = new grpc::Method<global::FindPreferredSupplierRequest, global::FindPreferredSupplierResponse>(
       grpc::MethodType.Unary,
       __ServiceName,
       "findPreferredSupplier",
-      __Marshaller_Product,
-      __Marshaller_Supplier);
+      __Marshaller_FindPreferredSupplierRequest,
+      __Marshaller_FindPreferredSupplierResponse);
 
-  static readonly grpc::Method<global::SetSupplierParams, global::Empty> __Method_setPreferredSupplierForProduct = new grpc::Method<global::SetSupplierParams, global::Empty>(
+  static readonly grpc::Method<global::SetPreferredSupplierForProductRequest, global::SetPreferredSupplierForProductResponse> __Method_setPreferredSupplierForProduct = new grpc::Method<global::SetPreferredSupplierForProductRequest, global::SetPreferredSupplierForProductResponse>(
       grpc::MethodType.Unary,
       __ServiceName,
       "setPreferredSupplierForProduct",
-      __Marshaller_SetSupplierParams,
-      __Marshaller_Empty);
+      __Marshaller_SetPreferredSupplierForProductRequest,
+      __Marshaller_SetPreferredSupplierForProductResponse);
 
   /// <summary>Service descriptor</summary>
   public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -63,27 +49,17 @@ public static partial class SupplierService
   [grpc::BindServiceMethod(typeof(SupplierService), "BindService")]
   public abstract partial class SupplierServiceBase
   {
-    public virtual global::System.Threading.Tasks.Task<global::SupplierList> findAllPreferredSuppliers(global::Empty request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::FindAllPreferredSuppliersResponse> findAllPreferredSuppliers(global::FindAllPreferredSuppliersRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
 
-    public virtual global::System.Threading.Tasks.Task<global::SupplierList> findAllSuppliers(global::Empty request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::FindPreferredSupplierResponse> findPreferredSupplier(global::FindPreferredSupplierRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
 
-    public virtual global::System.Threading.Tasks.Task<global::ProductList> findAllProducts(global::Empty request, grpc::ServerCallContext context)
-    {
-      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-    }
-
-    public virtual global::System.Threading.Tasks.Task<global::Supplier> findPreferredSupplier(global::Product request, grpc::ServerCallContext context)
-    {
-      throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
-    }
-
-    public virtual global::System.Threading.Tasks.Task<global::Empty> setPreferredSupplierForProduct(global::SetSupplierParams request, grpc::ServerCallContext context)
+    public virtual global::System.Threading.Tasks.Task<global::SetPreferredSupplierForProductResponse> setPreferredSupplierForProduct(global::SetPreferredSupplierForProductRequest request, grpc::ServerCallContext context)
     {
       throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
     }
@@ -113,83 +89,51 @@ public static partial class SupplierService
     {
     }
 
-    public virtual global::SupplierList findAllPreferredSuppliers(global::Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::FindAllPreferredSuppliersResponse findAllPreferredSuppliers(global::FindAllPreferredSuppliersRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return findAllPreferredSuppliers(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual global::SupplierList findAllPreferredSuppliers(global::Empty request, grpc::CallOptions options)
+    public virtual global::FindAllPreferredSuppliersResponse findAllPreferredSuppliers(global::FindAllPreferredSuppliersRequest request, grpc::CallOptions options)
     {
       return CallInvoker.BlockingUnaryCall(__Method_findAllPreferredSuppliers, null, options, request);
     }
-    public virtual grpc::AsyncUnaryCall<global::SupplierList> findAllPreferredSuppliersAsync(global::Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::FindAllPreferredSuppliersResponse> findAllPreferredSuppliersAsync(global::FindAllPreferredSuppliersRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return findAllPreferredSuppliersAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual grpc::AsyncUnaryCall<global::SupplierList> findAllPreferredSuppliersAsync(global::Empty request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::FindAllPreferredSuppliersResponse> findAllPreferredSuppliersAsync(global::FindAllPreferredSuppliersRequest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_findAllPreferredSuppliers, null, options, request);
     }
-    public virtual global::SupplierList findAllSuppliers(global::Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return findAllSuppliers(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    public virtual global::SupplierList findAllSuppliers(global::Empty request, grpc::CallOptions options)
-    {
-      return CallInvoker.BlockingUnaryCall(__Method_findAllSuppliers, null, options, request);
-    }
-    public virtual grpc::AsyncUnaryCall<global::SupplierList> findAllSuppliersAsync(global::Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return findAllSuppliersAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    public virtual grpc::AsyncUnaryCall<global::SupplierList> findAllSuppliersAsync(global::Empty request, grpc::CallOptions options)
-    {
-      return CallInvoker.AsyncUnaryCall(__Method_findAllSuppliers, null, options, request);
-    }
-    public virtual global::ProductList findAllProducts(global::Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return findAllProducts(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    public virtual global::ProductList findAllProducts(global::Empty request, grpc::CallOptions options)
-    {
-      return CallInvoker.BlockingUnaryCall(__Method_findAllProducts, null, options, request);
-    }
-    public virtual grpc::AsyncUnaryCall<global::ProductList> findAllProductsAsync(global::Empty request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
-    {
-      return findAllProductsAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
-    }
-    public virtual grpc::AsyncUnaryCall<global::ProductList> findAllProductsAsync(global::Empty request, grpc::CallOptions options)
-    {
-      return CallInvoker.AsyncUnaryCall(__Method_findAllProducts, null, options, request);
-    }
-    public virtual global::Supplier findPreferredSupplier(global::Product request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::FindPreferredSupplierResponse findPreferredSupplier(global::FindPreferredSupplierRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return findPreferredSupplier(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual global::Supplier findPreferredSupplier(global::Product request, grpc::CallOptions options)
+    public virtual global::FindPreferredSupplierResponse findPreferredSupplier(global::FindPreferredSupplierRequest request, grpc::CallOptions options)
     {
       return CallInvoker.BlockingUnaryCall(__Method_findPreferredSupplier, null, options, request);
     }
-    public virtual grpc::AsyncUnaryCall<global::Supplier> findPreferredSupplierAsync(global::Product request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::FindPreferredSupplierResponse> findPreferredSupplierAsync(global::FindPreferredSupplierRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return findPreferredSupplierAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual grpc::AsyncUnaryCall<global::Supplier> findPreferredSupplierAsync(global::Product request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::FindPreferredSupplierResponse> findPreferredSupplierAsync(global::FindPreferredSupplierRequest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_findPreferredSupplier, null, options, request);
     }
-    public virtual global::Empty setPreferredSupplierForProduct(global::SetSupplierParams request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual global::SetPreferredSupplierForProductResponse setPreferredSupplierForProduct(global::SetPreferredSupplierForProductRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return setPreferredSupplierForProduct(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual global::Empty setPreferredSupplierForProduct(global::SetSupplierParams request, grpc::CallOptions options)
+    public virtual global::SetPreferredSupplierForProductResponse setPreferredSupplierForProduct(global::SetPreferredSupplierForProductRequest request, grpc::CallOptions options)
     {
       return CallInvoker.BlockingUnaryCall(__Method_setPreferredSupplierForProduct, null, options, request);
     }
-    public virtual grpc::AsyncUnaryCall<global::Empty> setPreferredSupplierForProductAsync(global::SetSupplierParams request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+    public virtual grpc::AsyncUnaryCall<global::SetPreferredSupplierForProductResponse> setPreferredSupplierForProductAsync(global::SetPreferredSupplierForProductRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
     {
       return setPreferredSupplierForProductAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
     }
-    public virtual grpc::AsyncUnaryCall<global::Empty> setPreferredSupplierForProductAsync(global::SetSupplierParams request, grpc::CallOptions options)
+    public virtual grpc::AsyncUnaryCall<global::SetPreferredSupplierForProductResponse> setPreferredSupplierForProductAsync(global::SetPreferredSupplierForProductRequest request, grpc::CallOptions options)
     {
       return CallInvoker.AsyncUnaryCall(__Method_setPreferredSupplierForProduct, null, options, request);
     }
@@ -206,8 +150,6 @@ public static partial class SupplierService
   {
     return grpc::ServerServiceDefinition.CreateBuilder()
         .AddMethod(__Method_findAllPreferredSuppliers, serviceImpl.findAllPreferredSuppliers)
-        .AddMethod(__Method_findAllSuppliers, serviceImpl.findAllSuppliers)
-        .AddMethod(__Method_findAllProducts, serviceImpl.findAllProducts)
         .AddMethod(__Method_findPreferredSupplier, serviceImpl.findPreferredSupplier)
         .AddMethod(__Method_setPreferredSupplierForProduct, serviceImpl.setPreferredSupplierForProduct).Build();
   }
@@ -218,11 +160,9 @@ public static partial class SupplierService
   /// <param name="serviceImpl">An object implementing the server-side handling logic.</param>
   public static void BindService(grpc::ServiceBinderBase serviceBinder, SupplierServiceBase serviceImpl)
   {
-    serviceBinder.AddMethod(__Method_findAllPreferredSuppliers, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Empty, global::SupplierList>(serviceImpl.findAllPreferredSuppliers));
-    serviceBinder.AddMethod(__Method_findAllSuppliers, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Empty, global::SupplierList>(serviceImpl.findAllSuppliers));
-    serviceBinder.AddMethod(__Method_findAllProducts, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Empty, global::ProductList>(serviceImpl.findAllProducts));
-    serviceBinder.AddMethod(__Method_findPreferredSupplier, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Product, global::Supplier>(serviceImpl.findPreferredSupplier));
-    serviceBinder.AddMethod(__Method_setPreferredSupplierForProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SetSupplierParams, global::Empty>(serviceImpl.setPreferredSupplierForProduct));
+    serviceBinder.AddMethod(__Method_findAllPreferredSuppliers, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FindAllPreferredSuppliersRequest, global::FindAllPreferredSuppliersResponse>(serviceImpl.findAllPreferredSuppliers));
+    serviceBinder.AddMethod(__Method_findPreferredSupplier, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::FindPreferredSupplierRequest, global::FindPreferredSupplierResponse>(serviceImpl.findPreferredSupplier));
+    serviceBinder.AddMethod(__Method_setPreferredSupplierForProduct, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::SetPreferredSupplierForProductRequest, global::SetPreferredSupplierForProductResponse>(serviceImpl.setPreferredSupplierForProduct));
   }
 
 }

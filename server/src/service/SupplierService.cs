@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using MongoDB.Driver;
+using Grpc.Core;
 using System.Linq;
 
 namespace Suppliers
@@ -29,10 +30,10 @@ namespace Suppliers
             var pId = (product??throw new ArgumentNullException()).Id;
             var sId = (supplier??throw new ArgumentNullException()).Id;
             if (productList.FindAll((Product p) => p.Id == pId).Count == 0) {
-                throw new UnknownProductException();
+                throw new UnknownProductException(new Status(StatusCode.InvalidArgument, "Das Produkt existiert leider nicht"));
             }
             if (supplierList.FindAll((Supplier s) => s.Id == sId).Count == 0) {
-                throw new UnknownSupplierException();
+                throw new UnknownSupplierException(new Status(StatusCode.InvalidArgument, "Der Lieferant existiert leider nicht"));
             }
             productList.Find( (Product p) => p.Id == pId ).SupplierFk = sId;
         }

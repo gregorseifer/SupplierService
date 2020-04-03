@@ -10,17 +10,22 @@ namespace Suppliers
             this.suppData = new SupplierService();
         }
         
-        public override Task<SupplierList> findAllPreferredSuppliers(Empty request, ServerCallContext context)
+        public override Task<FindAllPreferredSuppliersResponse> findAllPreferredSuppliers(FindAllPreferredSuppliersRequest request, ServerCallContext context)
         {
-            return Task.FromResult( suppData.findAllPreferredSuppliers() );
+            FindAllPreferredSuppliersResponse response = new FindAllPreferredSuppliersResponse();
+            response.Suppliers.AddRange(suppData.findAllPreferredSuppliers());
+            return Task.FromResult ( response );
         }
-        public override Task<Supplier> findPreferredSupplier(Product product, ServerCallContext context)
+        public override Task<FindPreferredSupplierResponse> findPreferredSupplier(FindPreferredSupplierRequest request, ServerCallContext context)
         {
-            return Task.FromResult( suppData.findPreferredSupplier(product) );
+            FindPreferredSupplierResponse response = new FindPreferredSupplierResponse();
+            response.Supplier = suppData.findPreferredSupplier(request.Product);
+            return Task.FromResult( response );
         }
-        public override Task<Empty> setPreferredSupplierForProduct(SetSupplierParams setSupplierParams, ServerCallContext context)
+        public override Task<SetPreferredSupplierForProductResponse> setPreferredSupplierForProduct(SetPreferredSupplierForProductRequest request, ServerCallContext context)
         {
-            return Task.FromResult( suppData.setPreferredSupplierForProduct(setSupplierParams) );
+            suppData.setPreferredSupplierForProduct(request.Supplier, request.Product);
+            return Task.FromResult( new SetPreferredSupplierForProductResponse() );
         }
     }
 }

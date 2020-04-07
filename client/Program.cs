@@ -46,7 +46,7 @@ namespace Client
                 FindPreferredSupplierResponse response = client.findPreferredSupplier(request2);
                 Console.WriteLine(response.Supplier?.Id);
 
-                Console.WriteLine("\nEinen Lieferanten ls Präferenz für ein nicht existierendes Produkt setzen, um eine UnknownProductException zu werfen:");
+                Console.WriteLine("\nEinen Lieferanten als Präferenz für ein nicht existierendes Produkt setzen, um eine UnknownProductException zu werfen:");
                 Product product2 = new Product {
                     Id = "0000000000"
                 };

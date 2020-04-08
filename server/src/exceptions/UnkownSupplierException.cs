@@ -5,8 +5,7 @@ namespace Suppliers {
     [System.Serializable]
     public class UnknownSupplierException : RpcException
     {
-        public UnknownSupplierException(Status status) : base(status)
-        {
-        }
+        public UnknownSupplierException() 
+            : base( new Status(StatusCode.InvalidArgument, "Der Lieferant existiert leider nicht") ){}   
     }
 }

@@ -29,10 +29,10 @@ namespace Suppliers
             var pId = (product??throw new ArgumentNullException()).Id;
             var sId = (supplier??throw new ArgumentNullException()).Id;
             if (productList.FindAll((Product p) => p.Id == pId).Count == 0) {
-                throw new UnknownProductException(new Status(StatusCode.InvalidArgument, "Das Produkt existiert leider nicht"));
+                throw new UnknownProductException();
             }
             if (supplierList.FindAll((Supplier s) => s.Id == sId).Count == 0) {
-                throw new UnknownSupplierException(new Status(StatusCode.InvalidArgument, "Der Lieferant existiert leider nicht"));
+                throw new UnknownSupplierException();
             }
             productList.Find( (Product p) => p.Id == pId ).SupplierFk = sId;
         }

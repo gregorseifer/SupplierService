@@ -5,9 +5,8 @@ namespace Suppliers{
     [Serializable]
     public class UnknownProductException : RpcException
     {
-        public UnknownProductException(Status status) : base(status)
-        {
-        }
+        public UnknownProductException() 
+            : base( new Status(StatusCode.InvalidArgument, "Das Produkt existiert leider nicht") ){}
     }
     
 }
